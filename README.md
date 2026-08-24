@@ -22,10 +22,10 @@ pkg update && pkg upgrade -y
 pkg install figlet -y
 
 # 2. Clone repositori ini
-git clone https://github.com/pikri69/tes.git
+git clone https://github.com/pikri69/termux-thing.git
 
 # 3. Masuk ke direktori proyek
-cd tes
+cd termux-thing
 
 # 4. Pindahkan skrip bashrc ke direktori home
 cp bashrc.sh ~/.bashrc
@@ -91,10 +91,10 @@ pkg update && pkg upgrade -y
 pkg install figlet -y
 
 # 2. Clone this repository
-git clone https://github.com/pikri69/tes.git
+git clone https://github.com/pikri69/termux-thing.git
 
 # 3. Enter the project directory
-cd tes
+cd termux-thing
 
 # 4. Move the bashrc script to the home directory
 cp bashrc.sh ~/.bashrc
