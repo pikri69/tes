@@ -1,144 +1,117 @@
-# Skrip .bashrc untuk termux
+# Tes.
+
+![Platform](https://img.shields.io/badge/Platform-Termux_Android-black?style=for-the-badge)
+![Interface](https://img.shields.io/badge/Interface-Multilingual-white?labelColor=red&style=for-the-badge)
+![Repo Size](https://img.shields.io/github/repo-size/pikri69/tes?style=for-the-badge)
+![Language](https://img.shields.io/badge/Language-Shell-green.svg?style=for-the-badge)
+
+---
 
 ## 🇮🇩 Buatan Indonesia
 
-Skrip ini dibuat oleh anak bangsa Indonesia. (kece bet gwej 🗿)
+Skrip konfigurasi dan kustomisasi lingkungan Termux yang elegan, cepat, dan kaya fitur. Dibuat oleh anak bangsa Indonesia. (kece bet gwej 🗿)
 
-## 🌟 Fitur Utama
-- ⚡ **Ringan & Cepat:** Berjalan optimal tanpa memakan banyak memori internal.
-- 🕒 **Sapaan Dinamis:** Ucapan dan jam *real-time* berbahasa Indonesia sesuai zona waktu.
-- ✅ **Smart Prompt:** Terdapat indikator `[✓]` (sukses) dan `[✗]` (error) setiap menjalankan perintah.
-- 🎨 **Tampilan Estetik:** Sudah termasuk *font* dan *color scheme* kustom untuk mempercantik Termux.
-- 🛠️ **Mudah Disetup:** Proses instalasi yang serba otomatis.
+### 🌟 Fitur Utama
+- ⚡ **Ringan & Cepat:** Optimasi startup terminal menggunakan sistem caching cerdas (`vivid` & `starship`).
+- 🔄 **Multibahasa:** Mendukung skrip instalasi interaktif dalam Bahasa Indonesia (`id`) dan English (`en`).
+- 🎨 **Enhanced LS & Prompt:** Menggunakan `eza` dengan ikon & git status, serta prompt modern dari `Starship`.
+- ✨ **Startup Spinner:** Animasi pemuatan interaktif yang mulus saat membuka sesi terminal baru.
+- 🛠️ **Mudah Disetup:** Proses instalasi otomatis termasuk konfigurasi font dan skema warna terminal.
 
-## 🛠️ Cara Instalasi & Penggunaan
+### 🚀 Cara Instalasi & Penggunaan
 
-*Catatan:* Jika ada pertanyaan di sesi upgrade, maka tekan enter saja.
-Ikuti langkah berikut untuk memasang skrip dan tema ini di Termux kamu:
+Jalankan perintah berikut:
 
 ```bash
-# 1. Install paket yang dibutuhkan
+# Install paket (kalau ada pertanyaan di bagian upgrade, maka pencet enter saja)
 pkg update && pkg upgrade -y
-pkg install figlet -y
+pkg install git -y
 
-# 2. Clone repositori ini
-git clone https://github.com/pikri69/termux-thing.git
+# 1. Clone repositori
+git clone https://github.com/pikri69/tes.git
+cd tes
 
-# 3. Masuk ke direktori proyek
-cd termux-thing
+# 2. Beri akses ke install.sh
+chmod +x install.sh
 
-# 4. Pindahkan skrip bashrc ke direktori home
-cp bashrc.sh ~/.bashrc
-cp -r .rc ~
-
-# 5. Buat folder .termux (jika belum ada) lalu pindahkan font & warna
-touch ~/.hushlogin
-mkdir -p ~/.termux
-cp font.ttf ~/.termux/font.ttf
-cp colors.properties ~/.termux/colors.properties
-
-# 6. Terapkan tema dan reload pengaturan bash
-termux-reload-settings
-source ~/.bashrc
+# 3. Jalankan instalasi (pilih 'id' untuk Bahasa Indonesia atau 'en' untuk English)
+./install.sh id
+# atau
+./install.sh en
 ```
 
-## ⚙️ Setup Nama dan Zona Waktu
+Untuk menghapus konfigurasi dan mengembalikan pengaturan awal:
+```bash
+./uninstall.sh
+```
 
-Jika kamu ingin mengubah nama *Pengguna* dan zona waktunya,
-maka editlah file `.bashrc` yang ada di direktori home kamu (`~`).
+### ⚙️ Setup Nama dan Zona Waktu
+
+Jika kamu ingin mengubah nama *User* dan zona waktunya,
+maka editlah file `sapa.sh` yang ada di direktori .rc kamu (`~/.rc/`).
 
 Cari barisan `nama` dan ubah isi variabelnya menjadi nama kamu.
 Untuk zona waktu, cari barisan `zona_waktu` dan ubah variabelnya menjadi zona waktu kamu.
 *Contoh:* `zona_waktu="Asia/Jakarta"`
 
-## 🚀 Performa skrip
-
-```
-real    0m0.313s
-user    0m0.177s
-sys     0m0.128s
-```
-
-## 📸 Preview & Badge
-
-Untuk preview gambar dan badge, lihat di bagian paling bawah ya!
-
 ---
-<p align="center">Dibuat dengan ❤️ oleh <a href="https://github.com/pikri69">pikri69</a></p>
 
+## 🇬🇧 English
 
-# .bashrc script for termux
+An elegant, fast, and feature-rich Termux environment configuration and customization script. Made by an Indonesian.
 
-## 🇮🇩 Made in Indonesia
+### 🌟 Key Features
+- ⚡ **Lightweight & Fast:** Terminal startup optimization using smart caching (`vivid` & `starship`).
+- 🔄 **Multilingual:** Supports interactive installation scripts in Indonesian (`id`) and English (`en`).
+- 🎨 **Enhanced LS & Prompt:** Powered by `eza` with icons & git status, alongside modern `Starship` prompt.
+- ✨ **Startup Spinner:** Smooth interactive loading animation when opening a new terminal session.
+- 🛠️ **Easy Setup:** Fully automated installation process including terminal font and color scheme configuration.
 
-This script was made by an Indonesian.
+### 🚀 Installation & Usage
 
-## 🌟 Key Features
-- ⚡ **Lightweight & Fast:** Runs optimally without consuming much internal memory.
-- 🕒 **Dynamic Greeting:** Real-time Indonesian greetings and clock according to the time zone.
-- ✅ **Smart Prompt:** Features a `[✓]` (success) and `[✗]` (error) indicator for every executed command.
-- 🎨 **Aesthetic Look:** Includes custom fonts and color schemes to beautify your Termux.
-- 🛠️ **Easy Setup:** Fully automated installation process.
-
-## 🛠️ Installation & Usage
-
-*Note:* If there are prompts during the upgrade session, just press Enter.
-Follow these steps to install this script and theme on your Termux:
+Run the following command:
 
 ```bash
-# 1. Install required packages
+# Install packages (if there are questions in the upgrade section, just press enter)
 pkg update && pkg upgrade -y
-pkg install figlet -y
+pkg install git -y
 
-# 2. Clone this repository
-git clone https://github.com/pikri69/termux-thing.git
+# 1. Clone the repository
+git clone https://github.com/pikri69/tes.git
+cd tes
 
-# 3. Enter the project directory
-cd termux-thing
+# 2. Give access to install.sh
+chmod +x install.sh
 
-# 4. Move the bashrc script to the home directory
-cp bashrc.sh ~/.bashrc
-cp -r .rc ~
-
-# 5. Create .termux folder (if it doesn't exist) then move font & colors
-touch ~/.hushlogin
-mkdir -p ~/.termux
-cp font.ttf ~/.termux/font.ttf
-cp colors.properties ~/.termux/colors.properties
-
-# 6. Apply theme and reload bash settings
-termux-reload-settings
-source ~/.bashrc
+# 3. Run installation (choose 'en' for English or 'id' for Indonesian)
+./install.sh en
+# or
+./install.sh id
 ```
 
-## ⚙️ Name and Timezone Setup
-
-If you want to change the *User* name and the time zone,
-edit the `.bashrc` file located in your home directory (`~`).
-
-Find the `nama` (name) line and change the variable to your name.
-For the time zone, find the `zona_waktu` line and change the variable to your time zone.
-*Example:* `zona_waktu="Asia/Jakarta"`
-
-## 🚀 Script Performance
-
-```
-real    0m0.313s
-user    0m0.177s
-sys     0m0.128s
+To remove the configuration and restore default settings:
+```bash
+./uninstall.sh
 ```
 
-## 📸 Preview & Badge
+### ⚙️ Name and Timezone Setup
 
-Here is how Termux looks after using this script:
+If you want to change your *User* name and timezone, edit the `greet.sh` file located in your `.rc` directory (`~/.rc/`).
 
-![Screenshot Tampilan Termux-1](screenshots/termuxThing1.jpg)
-![Screenshot Tampilan Termux-2](screenshots/termuxThing2.jpg)
-
-![Platform](https://img.shields.io/badge/Platform-Termux_Android-black?style=for-the-badge)
-![Interface](https://img.shields.io/badge/Interface-Indonesian-white?labelColor=red&style=for-the-badge)
-![Repo Size](https://img.shields.io/github/repo-size/pikri69/termux-thing?style=for-the-badge)
-![Language](https://img.shields.io/badge/Language-Shell-green.svg?style=for-the-badge)
+Look for the `name` line and change the variable value to your name.
+For timezone, look for the `timezone` line and change its value to your timezone.
+*Example:* `timezone="Asia/Jakarta"`
 
 ---
-<p align="center">Created with  ❤️ by <a href="https://github.com/pikri69">pikri69</a></p>
+
+## 📸 Preview
+
+![Preview Indonesia](screenshots/id.jpg)
+![Preview English](screenshots/en.jpg)
+
+## License
+
+License: MIT
+
+---
+<p align="center">Made with ❤️ by <a href="https://github.com/pikri69">pikri69</a></p>
